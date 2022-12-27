@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--this specifies the character encoding for the HTML document-->
+        <meta charset="UTF-8">
+
+        <!--refresh the page every 120 seconds-->
+        <meta http-equiv="refresh" content="120">
+
+        <!--This is a small descrition of our website-->
+        <meta name="description" content="The Public Friendlies Zoo - Reserve
+        tickets
+        for yourself and your family to come and experience our wide variety
+        of
+        animal themed activities.">
+
+        <!--Here we define the author, which is our group-->
+        <meta name="author" content="UoL: Team 78 (Tutor Group 8)">
+
+        <!--This helps us scale our website width dependant upon the width of the device being used.
+        The following code makes the website mobile-optimized.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Here we set some keywords to allow search engines to find our website easier which
+        can help bring customers to our website-->
+        <meta name=”keywords” content="buy, reserve, book, theme park, animals,
+        zoo, vacation">
+
+        <!--This links our CSS stylesheet to our html-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--This is the icon beside the title-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+        <!--The title of our webpage, we ensure this is different for EVERY page-->
+        <title>Checkout | Friendlies Zoo</title>
+    </head>
+    <body>
+        <!--The nav bar contains our logo as well as links to the different pages of the website-->
+        <nav>
+            <img id="logo" src="assets/public-friendlies-logo.png" 
+            alt="logo image containing an all white low quality giraffe eating from
+             an all white tree, the logo also contains text saying 'PUBLIC FRIENDLIES this way to make friends with nature'
+            " width="300px">            <ul>
+                <li><a href="index.html">Home</a> </li>
+                <li><a href="schedules.html">Schedules</a> </li>
+                <li><a href="checkout.html">Buy Tickets</a></li>
+            </ul>
+        </nav>
+        <!--This container is the main container which holds all the content other then the nav bar and the footer.
+            In other words it holds the checkout form and the 'Checkout' header-->
+        <div id="checkout-container">
+            <h1>Checkout</h1>
+            <form>
+                <!--Here we define the appropriate labels to match our inputs, this helps mouse users in clicking the input areas.
+                     We also seperate each pair of labels/inputs so its more readable-->
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address"><br>
+
+                    <h2>Ticket Selection</h2>
+                    
+                    <label for="child-tickets">Child (age 12 and under): $20</label>
+                    <input type="number" id="child-tickets" name="child-tickets" min="0" value="0">
+
+                    <label for="adult-tickets">Adult (age 13-64): $30</label>
+                    <input type="number" id="adult-tickets" name="adult-tickets" min="0" value="0">
+
+                    <label>Senior (age 65 and over): $25</label>
+                    <input type="number" id="senior-tickets" name="senior-tickets" min="0" value="0">
+
+                    <input type="submit" value="Submit">
+            </form> 
+        </div>
+        <!-- The footer with contact info, opening hours, and address -->
+        <footer>
+            <div id="footer-container">
+                <!--This is the first section of the footer defined with the class footer-box. We seperate the footer into 
+                    three distinct parts using these footer-box's. We do this so it is easier to move them into three different
+                    places with our css. This first section is on the left side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Contact us</h3>
+                    <div class="footer-contact-link">
+                        <a href="mailto:enquiries@publicfriendlies.com">enquiries@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:support@publicfriendlies.com">support@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:careers@publicfriendlies.com">careers@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:business@publicfriendlies.com">business@publicfriendlies.com</a>
+                    </div>  
+                    <p class="contact-number">Enquiries: +1-202-555-0149</p>  
+                    <p class="contact-number">Business: +1-202-555-0137</p>
+                </section>
+
+                <!--second section of the footer, which is in the middle-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Operating hours</h3>
+                    <table id="operating-hours">
+                        <tr><th>Monday</th><td>Closed</td></tr>
+                        <tr><th>Tuesday</th><td>Closed</td></tr>
+                        <tr><th>Wednesday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Thursday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Friday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Saturday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Sunday</th><td>7AM-9PM</td></tr>
+                    </table>
+                </section>
+                <!--third section of the footer, this is on the right side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Address</h3>
+                    <address>
+                        1343 North Ave<br>
+                        Sanger, CA<br>
+                        93657<br>
+                        United States<br>
+                    </address>
+                </section>
+
+            </div>
+        </footer>
+    </body>
+</html>

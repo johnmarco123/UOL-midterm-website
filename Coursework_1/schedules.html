@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--this specifies the character encoding for the HTML document-->
+        <meta charset="UTF-8">
+
+        <!--refresh the page every 120 seconds-->
+        <meta http-equiv="refresh" content="120">
+        
+        <!--This is a small descrition of our website-->
+        <meta name="description" content="The Public Friendlies Zoo - learn about
+        all of our
+        interesting and wonderful animal experiences that we have on offer. Here
+        you will find
+        our list of activities and their schedules.">
+
+        <!--Here we define the author, which is our group-->
+        <meta name="author" content="UoL: Team 78 (Tutor Group 8)">
+
+        <!--This helps us scale our website width dependant upon the width of the device being used.
+        The following code makes the website mobile-optimized.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Here we set some keywords to allow search engines to find our website easier which
+        can help bring customers to our website-->
+        <meta name=”keywords” content="schedules, times, activities, theme park,
+        animals,
+        zoo, vacation, entertainment">
+
+        <!--This links our CSS stylesheet to our html-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--This is the icon beside the title-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+        <!--The title of our webpage, we ensure this is different for EVERY page-->
+        <title>Schedules | Public Friendlies Zoo</title>
+    </head>
+    <body>
+        <!--The nav bar contains our logo as well as links to the different pages of the website-->
+        <nav>
+            <img id="logo" src="assets/public-friendlies-logo.png" 
+            alt="logo image containing an all white low quality giraffe eating from
+             an all white tree, the logo also contains text saying 'PUBLIC FRIENDLIES this way to make friends with nature'
+            " width="300px">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedules.html">Schedules</a></li>
+            <li><a href="checkout.html">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!--This is our main container which holds everything other than the nav bar and the footer.
+             It holds information and schedules for the talent shows, feeding animals, and river boat rides-->
+        <div class="schedules-container">
+
+            <!--This is our first figure of three. It contains the picture and the info regarding the animal shows.-->
+                <figure class="talent-show-description" id='talent-shows-schedule'>
+                    <!--Each figure gets broken down into two parts, its image and its caption. We seperate these by putting the caption in the figcaption element-->
+                    <img src="assets/show-animals.jpeg" alt="a seal flying out of water viewed by a crowd of people" width="400px">
+                    <figcaption>
+                        <h3>Animals Show</h3>
+                        <p>Our animal shows at the zoo are perfect for families and children of all ages! 
+                        These interactive displays allow kids to get up close and personal with some of the most amazing animals on earth. 
+                        From playful primates to majestic elephants, there is something for everyone to enjoy.  
+                        Your kids will love getting to see their favorite animals up close and personal, and you'll love the memories you'll create together.</p>
+                    </figcaption>
+                </figure>
+                <!--This table displays information about various talent shows, with times for each show.-->
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Performance</th>
+                    </tr>
+                    <tr>
+                        <td><time datetime="09:00">9:00 AM</time></td>
+                        <td>Opening performance by the monkey band</td>
+                    </tr>
+                    <tr>
+                        <td>9:30 AM</td>
+                        <td>Elephant tricks</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="10:00">10:00 AM</time></td>
+                        <td>Seal acrobatics</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="10:30">10:30 AM</time></td>
+                        <td>Parrot singing contest</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="11:00">11:00 AM</time></td>
+                        <td>Intermission</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="11:30">11:30 AM</time></td>
+                        <td>Lion dance</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="12:00">12:00 PM</time></td>
+                        <td>Giraffe limbo</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="12:30">12:30 PM</time></td>
+                        <td>Hippo hula hoop</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="13:00">1:00 PM</time></td>
+                        <td>Closing performance by the chimpanzee choir</td>
+                    </tr>
+                </table>
+
+            <!--This is our second figure. It contains the picture and the info regarding feeding animals.-->
+                <figure class="feeding-animals-description" id="feeding-animals-schedule">
+                    <img src="assets/feeding-animals.jpeg" alt="People feeding food to elephants" width="400px">
+                    <figcaption>
+                        <h3>Feeding Animals</h3>
+                        <p>Welcome to the animal feeding sessions at our zoo! We are excited to offer you the opportunity to get up close and personal with some of the most amazing animals on earth.</p>
+                    </figcaption>
+                </figure>
+                <!--This table displays information about which times you can feed which animals-->
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Animal</th>
+                    </tr>
+                    <tr>
+                        <!--Notice we use the time element, this is to make it easier for programs to index our data.
+                        In other words it can allow better search engine results and allow us to get more customers on our website.-->
+                        <td><time datetime="09:00">9:00 AM</time></td>
+                        <td>Giraffe</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="10:00">10:00 AM</time></td>
+                        <td>Elephant</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="11:00">11:00 AM</time></td>
+                        <td>Monkey</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="12:00">12:00 PM</time></td>
+                        <td>Seal</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="13:00">1:00 PM</time></td>
+                        <td>Flamingo</td>
+                    </tr>
+                </table>
+
+            <!--This is our last figure. It contains the picture and the info regarding boat rides.-->
+            <figure class="boat-ride-description" id="boat-rides-schedule">  
+                <img src="assets/river-boat.jpeg" alt="A family on a boat looking beside them to see wild cheetahs." width="500px">
+                <figcaption>
+                    <h3>River Cruise</h3>
+                    <p>Experience the beauty and wonder of the animal kingdom from the water with a sightseeing boat ride at the zoo!
+                    Our boat ride tours offer a unique and relaxing way to explore the zoo and see the animals up close. Our experienced crew will take you on a tour of the lake, passing by a variety of animal habitats and exhibits. You'll have the opportunity to see flamingos, monkeys, giraffes, elephants, reptiles, lions, bears, and more!</p>
+                </figcaption>
+            </figure>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                </tr>
+                <tr>
+                    <td><time datetime="09:00">9:00 AM</time></td>
+                    <td>Boat Ride A</td>
+                </tr>
+                <tr>
+                    <td><time datetime="09:30">9:30 AM</time></td>
+                    <td>Boat Ride B</td>
+                </tr>
+                <tr>
+                    <td><time datetime="10:00">10:00 AM</time></td>
+                    <td>Boat Ride C</td>
+                </tr>
+                <tr>
+                    <td><time datetime="10:30">10:30 AM</time></td>
+                    <td>Boat Ride D</td>
+                </tr>
+                <tr>
+                    <td><time datetime="11:00">11:00 AM</time></td>
+                    <td>Boat Ride E</td>
+                </tr>
+                <tr>
+                    <td><time datetime="11:30">11:30 AM</time></td>
+                    <td>Boat Ride F</td>
+                </tr>
+                <tr>
+                    <td><time datetime="12:00">12:00 PM</time></td>
+                    <td>Boat Ride G</td>
+                </tr>
+                <tr>
+                    <td><time datetime="12:30">12:30 PM</time></td>
+                    <td>Boat Ride H</td>
+                </tr>
+                <tr>
+                    <td><time datetime="13:00">1:00 PM</time></td>
+                    <td>Boat Ride I</td>
+                </tr>
+                <tr>
+                    <td><time datetime="13:30">1:30 PM</time></td>
+                    <td>Boat Ride J</td>
+                </tr>
+                <tr>
+                    <td><time datetime="14:00">2:00 PM</time></td>
+                    <td>Boat Ride K</td>
+                </tr>
+                <tr>
+                    <td><time datetime="14:30">2:30 PM</time></td>
+                    <td>Boat Ride L</td>
+                </tr>
+                <tr>
+                    <td><time datetime="15:00">3:00 PM</time></td>
+                    <td>Boat Ride M</td>
+                </tr>
+                <tr>
+                    <td><time datetime="15:30">3:30 PM</time></td>
+                    <td>Boat Ride N</td>
+                </tr>
+                <tr>
+                    <td><time datetime="16:00">4:00 PM</time></td>
+                    <td>Boat Ride O</td>
+                </tr>
+                <tr>
+                    <td><time datetime="16:30">4:30 PM</time></td>
+                    <td>Boat Ride P</td>
+                </tr>
+            </table>
+        </div>
+        <!-- The footer with contact info, opening hours, and address -->
+        <footer>
+            <div id="footer-container">
+                <!--This is the first section of the footer, we seperate the footer into three distinct sections so it is easier
+                    to style them in three distinct places with our css. This first section is on the left side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Contact us</h3>
+                    <div class="footer-contact-link">
+                        <a href="mailto:enquiries@publicfriendlies.com">enquiries@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:support@publicfriendlies.com">support@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:careers@publicfriendlies.com">careers@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:business@publicfriendlies.com">business@publicfriendlies.com</a>
+                    </div>  
+                    <p class="contact-number">Enquiries: +1-202-555-0149</p>  
+                    <p class="contact-number">Business: +1-202-555-0137</p>
+                </section>
+
+                <!--second section of the footer, which is in the middle-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Operating hours</h3>
+                    <table id="operating-hours">
+                        <tr><th>Monday</th><td>Closed</td></tr>
+                        <tr><th>Tuesday</th><td>Closed</td></tr>
+                        <tr><th>Wednesday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Thursday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Friday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Saturday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Sunday</th><td>7AM-9PM</td></tr>
+                    </table>
+                </section>
+                <!--third section of the footer, this is on the right side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Address</h3>
+                    <address>
+                        1343 North Ave<br>
+                        Sanger, CA<br>
+                        93657<br>
+                        United States<br>
+                    </address>
+                </section>
+
+            </div>
+        </footer>
+    </body>
+</html>

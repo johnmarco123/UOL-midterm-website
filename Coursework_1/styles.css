@@ -1,0 +1,554 @@
+/*SECTION THAT APPLIES FOR ALL PAGES*/
+*{
+    font-family: "Lucida Console", "Courier New", monospace;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #729343;
+}
+html, body{
+  height:100%
+}
+/*Nav bar always stays ontop*/
+nav {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10; /* to make sure it is displayed on top */
+}
+nav #logo{
+  margin-right: auto;
+  margin-left: 10px;
+}
+h2 {
+  text-align: center;
+  margin: 70px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  font-size: large;
+  font-weight: bolder;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #729343;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+/*On hover we want to change the colours of the nav bar elements, 'home', 'schedule' and 'checkout' */
+li a:hover {
+  background-color: #096A2E;
+  color: #FFFFFF;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #729343;
+}
+
+#footer-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  color: white;
+}
+
+#footer-container a,
+ #footer-container p,
+ .footerBox h3,
+ .footer-box-heading {
+  color: white;
+}
+/*add a nice blue colour when hovering over emails*/
+#footer-container a:hover {
+  color: #00FFFF;
+}
+
+
+.footer-box {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.footer-contact-link {
+  font-size: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.contact-number {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-box table {
+  min-width: 100px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-box th,
+.footer-box td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+  color: white;
+}
+
+
+.footer-box address{
+  margin-top: 20px;
+  color: white;
+  font-style: normal;
+}
+
+
+/****************************************/
+/*END SECTION THAT APPLIES FOR ALL PAGES*/
+/****************************************/
+
+
+
+
+
+/******************************************/
+/*START SECTION THAT APPLIES FOR HOME PAGE*/
+/******************************************/
+/*The container that holds all the content on the home page*/
+.home-container{
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0px 50px 0px;
+}
+/*The container that holds the title-intro and the map-container*/
+#intro-map{
+  display: flex;
+  justify-content: center;
+  background-color: #729343;
+  margin-top: 20px;
+  margin-left: 130px;
+  margin-right: 130px;
+  margin-top: 20px;
+  border-radius: 8px;
+  min-width: 900px;
+ }
+
+#title-intro
+{
+    color: white;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+/*holds the map on the front page*/
+#map-container {
+  position: relative;
+  margin: 30px;
+}
+/*the map on the front page*/
+.map{
+  width: 650px;
+}
+
+/*--------------------------------*/
+/* COOL FANCY CSS ANIMATIONS START */
+/*--------------------------------*/
+/*To allow the animations to function we utilize checkboxes to detect user hovering.
+ So here we hide the checkboxes so the site is more visually appealing. We don't remove the checkboxes
+ so we can still allow non mouse users to select the check boxes*/
+.visually-hidden {
+  position: absolute;
+  left: -100vw;
+}
+
+/*The animation for our markers*/
+/*The animation is the same for all of them,
+ however the positioning is offset to display
+  each location on the map accurately*/
+@keyframes boat-cruise-animation {
+  0%, 100%   {left:120px; top:160px;}
+  50%   {left:120px; top:155px;}
+}
+@keyframes feeding-animals-animation {
+  0%, 100%  {left:180px; top:305px;}
+  50%   {left:180px; top:300px;}
+}
+@keyframes animal-show-animation {
+  0%, 100%  {left:480px; top:155px;}
+  50%   {left:480px; top:150px;}
+}
+@keyframes buggy-animation {
+  0%, 100%  {left:415px; top:335px;}
+  50%   {left:415px; top:330px;}
+}
+@keyframes resteraunt-animation {
+  0%, 100%  {left:445px; top:220px;}
+  50%   {left:445px; top:215px;}
+}
+
+#feeding-animals-pin{
+  animation: feeding-animals-animation 1s infinite alternate linear;
+}
+#boat-cruise-pin{
+  animation: boat-cruise-animation 1s infinite alternate linear;
+}
+#animal-show-pin{
+  animation: animal-show-animation 1s infinite alternate linear;
+}
+#buggy-pin{
+  animation: buggy-animation 1s infinite alternate linear;
+}
+#resteraunt-pin{
+  animation: resteraunt-animation 1s infinite alternate linear;
+}
+/*the red marker*/
+.pins{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position:absolute;
+  border-radius: 60% 60% 0% 60%;
+  transform:rotate(45deg);
+  transition: background-color 0.6s ease;
+  cursor:pointer;
+}
+
+/*the white dot in the red marker, please note that moving the position of this will be offset by 45deg since the label
+is offset by 45deg*/
+#boat-cruise-pin:after,
+#feeding-animals-pin:after,
+#animal-show-pin:after,
+#buggy-pin:after,
+#resteraunt-pin:after{
+  content:'';
+  height: 8px;
+  width: 8px;
+  background:white;
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 6px;
+  border-radius: 50%
+}
+/*The class that each hidden pop up text in the map shares*/
+.hidden-text{
+  border-radius: 50%;
+  padding: 20px;
+  text-align:center;
+  color:black;
+  background-color:white;
+  position:absolute;
+  display:none;
+  font-size: 15px;
+}
+/*The three pictures (the seal jumping out of water, the elephants eating food, and the boat ride all share this class*/
+
+.zoom{
+  transition: transform .2s; 
+  margin-top:20px;
+}
+/*This allows us to zoom in to each picture hovered using scale*/
+.zoom:hover{
+  transform:scale(1.1)
+}
+/*we use overlay to show and hide the text if the user hovers over the content or not*/
+.overlay{
+  transition: .5s ease;
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+}
+/*the description text for the resteraunt and the buggy pictures which is revealed upon hovering*/
+.hidden-description{
+  background-color: white;
+  color:black;
+  font-size: 16px;
+  padding: 16px 32px;
+  width:290px;
+  height:205px;
+  border-radius: 10px;
+  text-align: left;
+}
+/*if user hovers over the buggy cart picture we show its description,
+ if the user hovers over the resteraunt picture we show its description*/
+#cart:hover .overlay,
+#food:hover .overlay{
+  opacity:1;
+}
+
+/*these popups are just the text that pops up on the map when u hover or click on a pin*/
+#boat-cruise-popup{
+  top:95px;
+  left:58px;
+}
+#feeding-animals-popup{
+  top: 240px;
+  left: 110px;
+}
+
+#buggy-popup{
+  top:270px;
+  left: 350px;
+}
+#animal-show-popup{
+  top: 90px;
+  left: 410px;
+}
+
+#resteraunt-popup{
+  top:165px;
+  left:350px;
+}
+
+/*Upon hovering over a pin we highlight it in dark red for more visual appeal*/
+
+#boat-cruise-toggle:hover ~ #boat-cruise-pin,
+#feeding-animals-toggle:hover ~ #feeding-animals-pin,
+#animal-show-toggle:hover ~ #animal-show-pin,
+#buggy-toggle:hover ~ #buggy-pin,
+#resteraunt-toggle:hover ~ #resteraunt-pin{
+ background-color: darkred;
+}
+/*Upon hovering over a pin we also show the popup text for the assosiated pin*/
+#boat-cruise-toggle:hover ~ #boat-cruise-popup,
+#feeding-animals-toggle:hover ~ #feeding-animals-popup,
+#animal-show-toggle:hover ~ #animal-show-popup,
+#buggy-toggle:hover ~ #buggy-popup,
+#resteraunt-toggle:hover ~ #resteraunt-popup{
+ display:block
+}
+
+/*If use clicks on a pin we keep the popup text shown until the pin is clicked again
+This works using the hidden checkbox concept explained earlier.
+Basically these toggles are labels for the checkbox, and when we click on the
+label(the pin) it activates the checkbox which is off the screen, allowing us to get user mouse clicks without javascript*/
+#boat-cruise-toggle:checked ~ #boat-cruise-popup,
+#feeding-animals-toggle:checked ~ #feeding-animals-popup,
+#animal-show-toggle:checked ~ #animal-show-popup,
+#buggy-toggle:checked ~ #buggy-popup,
+#resteraunt-toggle:checked ~ #resteraunt-popup{
+ display:block
+}
+
+
+/*--------------------------------*/
+/* COOL FANCY CSS ANIMATIONS END */
+/*--------------------------------*/
+
+
+
+
+  #activity-container,
+  #available-services-container{
+    min-width: 950px;
+    margin-left: 130px;
+    margin-right: 130px;
+  }
+/*spacing for the attractions pictures*/
+  #attractions-snippets {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 16px;
+    align-items:flex-end;
+  }
+  /*spacing for the services pictures*/
+  #services{
+    display:flex;
+    justify-content:space-evenly;
+  }
+
+  #available-services-container {
+    background-color: #729343;
+    margin-top: 20px;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  #available-services-container p,
+  #available-services-container h2{
+    color:white;
+    margin: 20px;
+    text-align: center;
+  }
+
+  #available-services-container h2{
+    margin-top: 40px;
+  }
+
+
+/*positioning of the animal show, feeding animals and the river cruise*/
+  #animal-show,
+  #feeding-animals,
+  #river-cruise
+  {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    justify-content: flex-end;
+  }
+
+  #services img{
+    width:350px;
+  }
+  #attractions-snippets img{
+    width:275px;
+  }
+  #attractions-snippets img,
+  #services img {
+    border: 2px solid #729343;
+    border-radius: 5%;
+  }
+
+/******************************************/
+/*END OF SECTION THAT APPLIES FOR HOME PAGE*/
+/******************************************/
+
+
+
+
+
+/**************************************************/
+/*START OF SECTION THAT APPLIES FOR SCHEDULES PAGE*/
+/**************************************************/
+
+/*This contains everything in the schedule page except the footer and the nav bar*/
+.schedules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 50px 20px;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+/*here we position the descriptions for each event */
+.talent-show-description,
+ .boat-ride-description,
+ .feeding-animals-description {
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  min-width: 950px;
+  margin-left: 130px;
+  margin-right: 130px;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.boat-ride-description > img,
+.talent-show-description > img {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+table{
+  width: 80%;
+  min-width: 950px;
+  margin-left: 130px;
+  margin-right: 130px;
+  margin: 20px;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+tr {
+  margin: 10px 0;
+}
+/************************************************/
+/*END OF SECTION THAT APPLIES FOR SCHEDULES PAGE*/
+/************************************************/
+
+
+
+
+/*************************************************/
+/*START OF SECTION THAT APPLIES FOR CHECKOUT PAGE*/
+/*************************************************/
+  /*This contains everything in checkout except nav bar and footer*/
+  #checkout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    padding: 100px 20px 50px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+  }
+
+  /*here we select all input types for text and number and style accordingly*/
+  input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: 2px solid #729343;
+    border-radius: 10px;
+  }
+  /*Here we select all inputs with type submit*/
+  input[type="submit"] {
+    width: 100%;
+    background-color: #729343;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+/***********************************************/
+/*END OF SECTION THAT APPLIES FOR CHECKOUT PAGE*/
+/***********************************************/

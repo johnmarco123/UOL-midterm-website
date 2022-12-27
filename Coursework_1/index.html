@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--this specifies the character encoding for the HTML document-->
+        <meta charset="UTF-8">
+
+        <!--refresh the page every 120 seconds-->
+        <meta http-equiv="refresh" content="120">
+        
+        <!--This is a small descrition of our website-->
+        <meta name="description" content="The Public Friendlies Zoo - a theme park 
+        that provides fun family experiences, all to do with a large variety of animals. Here 
+        you will find all the information you need to get started">
+
+        <!--Here we define the author, which is our group-->
+        <meta name="author" content="UoL: Team 78 (Tutor Group 8)">
+
+        <!--This helps us scale our website width dependant upon the width of the device being used.
+        The following code makes the website mobile-optimized.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Here we set some keywords to allow search engines to find our website easier which
+        can help bring customers to our website-->
+        <meta name=”keywords” content="home, information, help, theme park, animals, zoo, 
+        entertainment, vacation">
+
+        <!--This links our CSS stylesheet to our html-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--This is the icon beside the title-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+        <!--The title of our webpage, we ensure this is different for EVERY page-->
+        <title>Home | Public Friendlies Zoo</title>
+    </head>
+    <body>
+
+        <!--The nav bar contains our logo as well as links to the different pages of the website-->
+        <nav>
+            <img id="logo" src="assets/public-friendlies-logo.png" alt="zoo logo" width="300px">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedules.html">Schedules</a> </li>
+                <li><a href="checkout.html">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!--The home-container class contains everything except the nav bar and the footer
+            This allows us to have the grey background for the main content-->
+        <div class="home-container">
+
+            <!--The intro-map class contains the picture seen when first seeing the website
+                here we also define the pins which link to the appropriate sections of our website -->
+            <section id="intro-map">
+                <h1 id="title-intro">
+                Home to more than 200 specimens of over 80 species
+                </h1>
+                <div id="map-container">
+                    <img class ="map" src="assets/map.png" alt="zoo map illustration">
+                    
+                    <!--here we define the pins using a checkbox sorta cheat, we hide the checkbox and show the label
+                    we then use this label to allow the user to interact with our website, ultimately allowing click actions 
+                    without the use of javascript-->
+                    <input id="boat-cruise-toggle" type="checkbox" class="visually-hidden">
+                    <label id="boat-cruise-pin" for="boat-cruise-toggle"class="pins"></label>
+                    <div id="boat-cruise-popup" class="hidden-text">Boat cruise</div>
+
+                    <input id="feeding-animals-toggle" type="checkbox" class="visually-hidden">
+                    <label id="feeding-animals-pin" for="feeding-animals-toggle" class="pins"></label>
+                    <div id="feeding-animals-popup" class="hidden-text">Feeding animals</div>
+
+                    <input id="animal-show-toggle" type="checkbox" class="visually-hidden">
+                    <label id="animal-show-pin" for="animal-show-toggle" class="pins"></label>
+                    <div id="animal-show-popup" class="hidden-text">Animal shows</div>
+
+                    <input id="resteraunt-toggle" type="checkbox" class="visually-hidden">
+                    <label id="resteraunt-pin" for="resteraunt-toggle" class="pins"></label>
+                    <div id="resteraunt-popup" class="hidden-text">Resteraunts</div>
+
+                    <input id="buggy-toggle" type="checkbox" class="visually-hidden">
+                    <label id="buggy-pin" for="buggy-toggle" class="pins"></label>
+                    <div id="buggy-popup" class="hidden-text">Buggy rides</div>
+
+                </div>
+            </section>
+
+            <!--This div contains all of the 'activities' this includes the animal show, the feeding animals,
+                and the river cruise-->
+            <div id="activity-container">
+                <h2>Enjoy a Family Fun day here with these Activities we've got..</h2>
+                <section id="attractions-snippets">
+
+                    <!--This is the first of three article tags, which breaks down the activity container into three parts. The three parts are the animal shows, feeding animals and the river cruise. Each part is defined as an article which has a picture that links to the appropriate section of the schedule.html page.-->
+                    <article id="animal-show">
+                        <!--We use the figure tag along with the figcaption tag to seperate our picture from our text, this also provides good html semantics.-->
+                        <figure>
+                            <figcaption>
+                                <h3>Animal Shows</h3>
+                                <p>
+                                    <q>Come one, come all, to the best animal shows in town!</q>
+                                    <br>
+                                -John the clown
+                                </p>
+                            </figcaption>
+
+                            <a href="schedules.html#talent-shows-schedule">
+                                <img src="assets/show-animals.jpeg" class="zoom" alt="a seal flying out of water viewed by a crowd of people" width="500px">
+                            </a>
+
+                        </figure>
+                    </article>
+
+
+                    <article id="feeding-animals">
+                        <figure>
+
+                            <figcaption>
+                                <h3>
+                                Feeding Animals
+                                </h3>
+                                <p>
+                                    <q>My favorite thing to do at public friendlies is to feed the animals!</q>
+                                    <br>
+                                    -Tim the park owner
+                                </p>
+                            </figcaption>
+
+                            <a href="schedules.html#feeding-animals-schedule">
+                                <img src="assets/feeding-animals.jpeg" class="zoom" alt="People feeding food to elephants" width="500px">
+                            </a>
+
+                        </figure>
+                    </article>
+
+                    <article id="river-cruise">
+                        <figure>
+
+                            <figcaption>
+                                <h3>River Cruise</h3>
+                                <q>Seeing the cheetahs on the boat cruise was a magnificant experience!</q>
+                                <br>
+                                -Anonymous
+                            </figcaption>
+
+                            <a href="schedules.html#boat-rides-schedule">
+                                <img src="assets/river-boat.jpeg" class="zoom" alt="A family on a boat looking beside them to see wild cheetahs." width="500px">
+                            </a>
+
+                        </figure>
+                    </article>
+
+                </section>
+            </div>
+
+            <!--This div contains the buggy rides and resteraunt pictures as well as descriptions for each respectively-->
+            <div id="available-services-container">
+                <h2>Experiencing wild life in the most comfortable way!</h2>
+                <section id="services">
+                    <!--Here we break down the available-services-container into two parts, the first is the buggy rides section
+                        which is shown below, and the second is the food section which follows directly afterwards-->
+                    <article id="cart">
+                        <figure>
+                            <div class="overlay">
+                                <div class="hidden-description">
+                                    Buggy carts are available on a 15 minute interval starting from 12:00PM and ending at 7:00PM.<br><br>
+                                    If there is no buggy present upon arrival please patiently wait for the next one to be available.
+                                </div>
+                            </div>
+                            <img src="assets/buggy.jpeg" id="buggy-image" alt="a family in a buggy cart with large amounts of green trees in the background" width="700px">
+                            <figcaption>
+                                <p>Buggy carts available!</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article id="food">
+                        <figure>
+                            <div class="overlay">
+                                <div class="hidden-description">
+                                    Our resteraunts are open from 11:00AM till 7:30PM<br><br>
+                                    The resteraunts that are available are The Pizza Shack,
+                                    Chilli Chicken Wings, Pauls Magnificant poutine, and The Polar Bear Icecream shop.
+                                </div>
+                            </div>
+                            <img src="assets/restaurant.jpeg"  alt="a family eating food whilst there are orangatans in the background with vast amounts of green wildlife around them." width="700px">
+                            <figcaption>
+                                <p>Takeouts for picnics!</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                    
+                </section>
+            </div>
+
+        </div>
+
+        <!-- The footer with contact info, opening hours, and address -->
+        <footer>
+            <div id="footer-container">
+                <!--This is the first section of the footer, we seperate the footer into three distinct sections so it is easier
+                    to style them in three distinct places with our css. This first section is on the left side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Contact us</h3>
+                    <div class="footer-contact-link">
+                        <a href="mailto:enquiries@publicfriendlies.com">enquiries@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:support@publicfriendlies.com">support@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:careers@publicfriendlies.com">careers@publicfriendlies.com</a>
+                    </div>
+                    <div class="footer-contact-link">
+                        <a href="mailto:business@publicfriendlies.com">business@publicfriendlies.com</a>
+                    </div>  
+                    <p class="contact-number">Enquiries: +1-202-555-0149</p>  
+                    <p class="contact-number">Business: +1-202-555-0137</p>
+                </section>
+
+                <!--second section of the footer, which is in the middle-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Operating hours</h3>
+                    <table id="operating-hours">
+                        <tr><th>Monday</th><td>Closed</td></tr>
+                        <tr><th>Tuesday</th><td>Closed</td></tr>
+                        <tr><th>Wednesday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Thursday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Friday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Saturday</th><td>7AM-9PM</td></tr>
+                        <tr><th>Sunday</th><td>7AM-9PM</td></tr>
+                    </table>
+                </section>
+                <!--third section of the footer, this is on the right side-->
+                <section class="footer-box">
+                    <h3 class="footer-box-heading">Address</h3>
+                    <address>
+                        1343 North Ave<br>
+                        Sanger, CA<br>
+                        93657<br>
+                        United States<br>
+                    </address>
+                </section>
+
+            </div>
+        </footer>
+    </body>
+</html>
