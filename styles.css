@@ -1,0 +1,776 @@
+/*SECTION THAT APPLIES FOR ALL PAGES*/
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #096a2e;
+}
+
+html,
+body {
+  height: 100%
+}
+
+/*Nav bar, always stays on top because of high z-index*/
+nav {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0px 0px 10px 1px #042f15;
+}
+
+nav #logo {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin: 70px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  font-size: large;
+  font-weight: bolder;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #729343;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/*On hover we want to change the colours of the nav bar elements, 'home', 'schedule' and 'checkout' */
+li a:hover {
+  background-color: #096A2E;
+  color: #FFFFFF;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #096a2e;
+}
+
+#footer-container {
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  color: white;
+  box-shadow: 0px 0px 10px 3px #042f15;
+}
+
+#footer-container a,
+#footer-container p,
+.footerBox h3,
+.footer-box-heading {
+  color: white;
+}
+
+/*add a nice blue colour when hovering over emails*/
+#footer-container a:hover {
+  color: #00FFFF;
+}
+
+
+.footer-box {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.footer-contact-link {
+  font-size: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.contact-number {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-box table {
+  min-width: 100px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.footer-box th,
+.footer-box td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+  color: white;
+}
+
+
+.footer-box address {
+  margin-top: 20px;
+  color: white;
+  font-style: normal;
+}
+
+
+/****************************************/
+/*END SECTION THAT APPLIES FOR ALL PAGES*/
+/****************************************/
+
+
+
+
+
+/******************************************/
+/*START SECTION THAT APPLIES FOR HOME PAGE*/
+/******************************************/
+/*The container that holds all the content on the home page*/
+.home-container {
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0px 50px 0px;
+}
+
+/*The container that holds the title-intro and the map-container*/
+#intro-map {
+  display: flex;
+  justify-content: center;
+  background-color: #096a2e;
+  box-shadow: 0px 0px 10px 3px #042f15;
+  margin: 20px 130px;
+  border-radius: 8px;
+  min-width: 900px;
+}
+
+#title-intro {
+  color: white;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+/*holds the map on the front page*/
+#map-container {
+  position: relative;
+  margin: 30px;
+}
+
+/*the map on the front page*/
+.map {
+  width: 650px;
+}
+
+/*--------------------------------*/
+/* COOL FANCY CSS ANIMATIONS START */
+/*--------------------------------*/
+
+
+/*The animation for our markers*/
+/*The animation is the same for all of them,
+ however the positioning is offset to display
+  each location on the map accurately*/
+@keyframes boat-cruise-animation {
+
+  0%,
+  100% {
+    left: 120px;
+    top: 155px;
+  }
+
+  50% {
+    left: 120px;
+    top: 150px;
+  }
+}
+
+@keyframes feeding-animals-animation {
+
+  0%,
+  100% {
+    left: 180px;
+    top: 300px;
+  }
+
+  50% {
+    left: 180px;
+    top: 295px;
+  }
+}
+
+@keyframes animal-show-animation {
+
+  0%,
+  100% {
+    left: 480px;
+    top: 150px;
+  }
+
+  50% {
+    left: 480px;
+    top: 145px;
+  }
+}
+
+@keyframes buggy-animation {
+
+  0%,
+  100% {
+    left: 415px;
+    top: 330px;
+  }
+
+  50% {
+    left: 415px;
+    top: 325px;
+  }
+}
+
+@keyframes restaurant-animation {
+
+  0%,
+  100% {
+    left: 445px;
+    top: 215px;
+  }
+
+  50% {
+    left: 445px;
+    top: 210px;
+  }
+}
+
+#feeding-animals-pin {
+  animation: feeding-animals-animation 1s infinite alternate linear;
+}
+
+#boat-cruise-pin {
+  animation: boat-cruise-animation 1s infinite alternate linear;
+}
+
+#animal-show-pin {
+  animation: animal-show-animation 1s infinite alternate linear;
+}
+
+#buggy-pin {
+  animation: buggy-animation 1s infinite alternate linear;
+}
+
+#restaurant-pin {
+  animation: restaurant-animation 1s infinite alternate linear;
+}
+
+
+/*styling of the red pin*/
+
+.pins{
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  position: absolute;
+  border-radius: 60% 60% 0% 60%;
+  transform: rotate(45deg);
+  transition: background-color 0.6s ease;
+}
+
+
+/*the white dot in the red marker, please note that moving the position of this will be offset by 45deg since the label
+is offset by 45deg*/
+.pins:after {
+  content: '';
+  height: 10px;
+  width: 10px;
+  background: white;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 8px;
+  border-radius: 50%
+}
+
+
+
+/*The three pictures (the seal jumping out of water, the elephants eating food, and the boat ride all share this class*/
+
+.zoom {
+  transition: transform 0.2s;
+  margin-top: 20px;
+}
+
+/*This allows us to zoom in to each picture hovered using scale*/
+.zoom:hover {
+  transform: scale(1.1)
+}
+
+/*we use overlay to show and hide the text if the user hovers over the content or not*/
+.overlay {
+  transition: .5s ease;
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+}
+
+/*the description text for the restaurant and the buggy pictures which is revealed upon hovering*/
+.hidden-description {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+  width: 290px;
+  height: 205px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+
+/*if user hovers over the buggy cart picture we show its description,
+ if the user hovers over the restaurant picture we show its description*/
+#cart:hover .overlay,
+#food:hover .overlay {
+  opacity: 1;
+}
+/*the text for the pop ups on the map*/
+.hidden-text{
+  display:none;
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+  position: absolute;
+  font-size: 15px;
+}
+/*these popups are just the text that pops up on the map when u hover or click on a pin*/
+#boat-cruise-popup {
+  top: 95px;
+  left: 58px;
+
+}
+
+#feeding-animals-popup {
+  top: 240px;
+  left: 110px;
+}
+
+#buggy-popup {
+  top: 270px;
+  left: 350px;
+}
+
+#animal-show-popup {
+  top: 90px;
+  left: 410px;
+}
+
+#restaurant-popup {
+  top: 165px;
+  left: 350px;
+}
+
+/*Upon hovering over a pin we highlight it in dark red for more visual appeal*/
+
+#boat-cruise-pin:hover,
+#feeding-animals-pin:hover,
+#animal-show-pin:hover,
+#buggy-pin:hover,
+#restaurant-pin:hover {
+  background-color:darkred;
+} 
+
+/*Upon hovering over a pin we also show the popup text for the assosiated pin*/
+#boat-cruise-link:hover + #boat-cruise-popup,
+#feeding-animals-link:hover + #feeding-animals-popup,
+#animal-show-link:hover + #animal-show-popup,
+#buggy-link:hover + #buggy-popup,
+#restaurant-link:hover + #restaurant-popup{
+  display:block;
+}
+
+/*we link the restaurant and buggy pins here so the content we want to show is
+centered better on the clients screen*/
+.services-anchors{
+  position:absolute;
+  top:1030px;
+}
+
+
+/*if the resteraunt pin or the buggy pin is clicked, activate the animation for the appropriate picture*/
+#anchor-to-restaurant:target ~
+#available-services-container > #services > #food > figure > img,
+#anchor-to-buggy:target ~ 
+#available-services-container > #services > #cart > figure > img{ 
+  animation: services-animation 0.7s ease .5s 3
+}
+/*animation to make the services bigger and smaller when clicking the matching pin*/
+@keyframes services-animation {
+  0%, 100%{transform:scale(1.0)}
+  50%{transform:scale(1.1)}
+}
+
+/*--------------------------------*/
+/* COOL FANCY CSS ANIMATIONS END */
+/*--------------------------------*/
+
+
+
+
+#activity-container,
+#available-services-container {
+  min-width: 950px;
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+/*spacing for the attractions pictures*/
+#attractions-snippets {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: flex-end;
+}
+
+/*spacing for the services pictures*/
+#services {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#available-services-container {
+  box-shadow: 0px 0px 10px 3px #042f15;
+  background-color: #096a2e;
+  margin:20px 130px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#available-services-container p,
+#available-services-container h2 {
+  color: white;
+  margin: 20px;
+  text-align: center;
+}
+
+#available-services-container h2 {
+  margin-top: 40px;
+}
+
+
+/*positioning of the animal show, feeding animals and the river cruise*/
+#animal-show,
+#feeding-animals,
+#river-cruise {
+  text-align:center;
+  width: 325px;
+}
+
+#services img {
+  width: 350px;
+}
+
+#attractions-snippets img {
+  width: 275px;
+}
+
+#attractions-snippets img,
+#services img {
+  border: 2px solid #729343;
+  border-radius: 5%;
+}
+
+/******************************************/
+/*END OF SECTION THAT APPLIES FOR HOME PAGE*/
+/******************************************/
+
+
+
+
+
+/**************************************************/
+/*START OF SECTION THAT APPLIES FOR SCHEDULES PAGE*/
+/**************************************************/
+
+/*This contains everything in the schedule page except the footer and the nav bar*/
+.schedules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 100%;
+  padding: 130px 10% 0px 10%;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+/* The heading for the page */
+.schedules-container h1 {
+  color: #096a2e;
+  margin-bottom: 50px;
+}
+/*the anchors which allow the homepage pins
+ to link to the appropriate content and have
+  it nicely centered on the clients screen*/
+#boat-cruise-anchor{
+  position:absolute;
+  top:1350px;
+}
+#feeding-animals-anchor{
+  position:absolute;
+  top:705px;
+
+}
+#animal-show-anchor{
+  position:absolute;
+  top:50px
+
+}
+/* Each event's description and image */
+.event-description {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+/* The event's description heading */
+.event-description h3 {
+  text-align: center;
+}
+
+/* This controls each individual event's schedule block */
+.event-schedule {
+  display: flex;
+  flex-direction: row;
+  background-color: #096a2e;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 3px #042f15;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Adjusts the event image, making it responsive to window size */
+.event-description>img {
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 1px #042f15;
+  width: 100%;
+  height: auto;
+}
+
+/* Sets the color for the text in each event schedule block */
+.event-schedule p,
+.event-schedule h3{
+  color:white;
+}
+.event-schedule table tr th,
+.event-schedule table tr td,
+.event-schedule table tr time {
+  color: black;
+}
+
+/* The timetable for each event.*/
+.event-table {
+  border-collapse: collapse;
+  margin: 20px;
+  border-radius: 10px;
+  font-family:sans-serif;
+  width: 50%;
+  background-color: white;
+  color:black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+}
+.event-table thead tr{
+  background-color:lightgreen;
+  color:ffffff;
+  text-align:left;
+}
+.event-table th, 
+.event-table td{
+  padding:12px 15px;
+}
+.event-table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+.event-table tbody tr:nth-of-type(even){
+  background-color:#f3f3f3;
+}
+.event-table tbody tr:last-of-type{
+  border-bottom: 2px solid #009879
+}
+.event-table tbody tr.active-row{
+  font-weight: bold;
+  color: #009879
+}
+
+/* Makes the width of the left-hand column 
+in the timetable static and small */
+.event-table td:nth-child(1) {
+  width: 100px;
+}
+
+/* The event timetable headings and data cells */
+.event-table th,
+.event-table td {
+  border: 1px solid #729343;
+  padding: 8px;
+  text-align: left;
+}
+
+/* The event timetable rows */
+.event-table tr {
+  margin: 10px 0;
+}
+
+/************************************************/
+/*END OF SECTION THAT APPLIES FOR SCHEDULES PAGE*/
+/************************************************/
+
+
+
+
+/*************************************************/
+/*START OF SECTION THAT APPLIES FOR CHECKOUT PAGE*/
+/*************************************************/
+
+/*This contains everything in checkout except nav bar and footer*/
+#checkout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  padding: 100px 20px 50px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+/* The page heading */
+#checkout-container h1 {
+  color: #096a2e;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* The submission form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #096a2e;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 3px #042f15;
+}
+
+/* The section of the form above the submit button */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* The section of the form for selecting tickets */
+#form-tickets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* The labels for the form input boxes */
+.form-section label {
+  color: white;
+}
+
+/* Each ticket number input and its heading and sub-heading */
+.ticket-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The ticket selector sub-heading which states the age range */
+.ticket-age-range {
+  color: white;
+  font-size: small;
+}
+
+/* Styles both the text and number input fields*/
+input[type="text"],
+input[type="number"] {
+  box-sizing: border-box;
+  border: 2px solid #729343;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: inset 0 0 10px #729343;
+  border: #096a2e;
+  border-style: solid;
+  border-width: 5px;
+}
+
+/* Styles the text input fields */
+input[type="text"] {
+  margin: 20px 0;
+  width: 70%;
+  padding: 12px 20px;
+}
+
+/* Styles the number input fields */
+input[type="number"] {
+  margin: 10px 0;
+  width: 60%;
+  padding: 12px 0px;
+}
+
+/* Styles submit buttons */
+input[type="submit"] {
+  width: 20%;
+  background-color: #729343;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 3px #042f15;
+  cursor: pointer;
+}
+
+/* Styles submit buttons when the mouse hovers over it */
+input[type="submit"]:hover {
+  background-color: #12d35c;
+  transition: 0.2s;
+}
+
+/* Styles submit buttons when the mouse clicks it */
+input[type="submit"]:active {
+  background-color: #042f15;
+  color: white;
+}
+
+/***********************************************/
+/*END OF SECTION THAT APPLIES FOR CHECKOUT PAGE*/
+/***********************************************/
